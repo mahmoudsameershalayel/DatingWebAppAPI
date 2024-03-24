@@ -11,6 +11,6 @@ namespace App.Core.APIDto.ApplicationUserDto
     {
         public string Username { get; set; }
         public string Token { get; set; }
-        public Gender Gender { get; set; }              
+        public string Gender { get; set; }              
     }
 }

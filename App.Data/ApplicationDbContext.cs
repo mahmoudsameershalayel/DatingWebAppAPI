@@ -49,7 +49,7 @@ namespace App.Data
                 NormalizedEmail = "MAHMOUD@ADMIN.COM",
                 UserName = "Mahmoud_Sameer",
                 UserType =0,
-                Gender = 0,
+                Gender = "male",
             };
 
             //Password Hasher

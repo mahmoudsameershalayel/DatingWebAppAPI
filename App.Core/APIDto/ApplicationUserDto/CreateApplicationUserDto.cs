@@ -19,12 +19,15 @@ namespace App.Core.APIDto.ApplicationUserDto
         public string Email { get; set; } = string.Empty;
         [Required(ErrorMessage = "*Phone is Required")]
         public string Phone { get; set; } = string.Empty;
-        [Required(ErrorMessage = "*Birth date is Required")]
-        public string BirthDate { get; set; } = "";
+        public DateTime BirthDate { get; set; }
         [Required(ErrorMessage = "*Password is Required")]
         public string Password { get; set; } = string.Empty;
-        public IFormFile? Image { get; set; }
-        public int? Gender { get; set; }
+        public string City { get; set; } = string.Empty;
+        public string Country { get; set; } = string.Empty;
+        public string Interests { get; set; } = string.Empty;           
+        public string LookingFor { get; set; } = string.Empty;
+        public string Introduction { get; set; } = string.Empty;
+        public string Gender { get; set; } = string.Empty;
         public string? ImageName { get; set; }
     }
 }

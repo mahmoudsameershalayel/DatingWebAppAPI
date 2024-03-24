@@ -1,14 +1,12 @@
 ﻿using App.Data.DbEntities;
+using Azure;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace App.API.Infrastructure.Services.TokenService
 {
@@ -26,7 +24,7 @@ namespace App.API.Infrastructure.Services.TokenService
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.NameId, user.Id),
-                new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName),
+                new Claim(JwtRegisteredClaimNames.Name, user.UserName),
             };
 
             var roles = await _userManager.GetRolesAsync(user);

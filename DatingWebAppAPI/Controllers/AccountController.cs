@@ -22,7 +22,7 @@ namespace DatingWebAppAPI.Controllers
             _tokenService = tokenService;
         }
         [HttpPost]
-        public async Task<ActionResult<ApplicationUser>> Register([FromForm] CreateApplicationUserDto dto)
+        public async Task<ActionResult<ApplicationUser>> Register(CreateApplicationUserDto dto)
         {
             if (ModelState.IsValid) {
                 if (await _applicationUserService.IsExist(dto.UserName))
@@ -49,7 +49,7 @@ namespace DatingWebAppAPI.Controllers
             {
                 Username = item.UserName,
                 Token = await _tokenService.CreateToken(item),
-                Gender = (App.Core.Enums.Gender)item.Gender
+                Gender = item.Gender
             };
         }
     }

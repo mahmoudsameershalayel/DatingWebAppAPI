@@ -4,6 +4,7 @@ using App.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace App.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240316101808_updateSomeThings")]
+    partial class updateSomeThings
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,16 +36,8 @@ namespace App.Data.Migrations
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Country")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Created_At")
@@ -62,19 +57,10 @@ namespace App.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Gender")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("Gender")
+                        .HasColumnType("int");
 
                     b.Property<string>("ImageName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Interests")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Introduction")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
@@ -88,10 +74,6 @@ namespace App.Data.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("LookingFor")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -151,27 +133,22 @@ namespace App.Data.Migrations
                             Id = "f1446937-109c-4e1a-97ce-0560442484f5",
                             AccessFailedCount = 0,
                             BirthDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "",
-                            ConcurrencyStamp = "f1fa1989-01b6-4aa6-b05d-4ee6ff29c737",
-                            Country = "",
-                            Created_At = new DateTime(2024, 3, 17, 10, 7, 12, 663, DateTimeKind.Local).AddTicks(9769),
+                            ConcurrencyStamp = "0c7a1c7c-d962-4d8b-93b6-1bac3397d509",
+                            Created_At = new DateTime(2024, 3, 16, 12, 18, 7, 352, DateTimeKind.Local).AddTicks(8909),
                             Email = "mahmoud@admin.com",
                             EmailConfirmed = false,
                             FullName = "Mahmoud Sameer",
-                            Gender = "male",
-                            Interests = "",
-                            Introduction = "",
+                            Gender = 0,
                             IsActive = true,
                             IsDeleted = false,
                             LockoutEnabled = false,
-                            LookingFor = "",
                             NormalizedEmail = "MAHMOUD@ADMIN.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJmDRpYF1H5qFTj3V3ZvdJaXiSQCby5oXzuJeLIjXIidtjJiwbxM3xHppEg1kMee1A==",
+                            PasswordHash = "AQAAAAIAAYagAAAAENSS2YRQc4FAsvhrx5fRStMzjiRqzQT5tsFara1/hq3d4pZeGdBLxe/ppCXyygnRhQ==",
                             Phone = "",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0c517af0-7456-4fa9-9d1f-441d4c43d4ad",
+                            SecurityStamp = "2787f492-1887-4a46-9258-0d66bbd42ffc",
                             TwoFactorEnabled = false,
-                            Updated_at = new DateTime(2024, 3, 17, 10, 7, 12, 663, DateTimeKind.Local).AddTicks(9825),
+                            Updated_at = new DateTime(2024, 3, 16, 12, 18, 7, 352, DateTimeKind.Local).AddTicks(8977),
                             UserName = "Mahmoud_Sameer",
                             UserType = 0
                         });
